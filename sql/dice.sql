@@ -21,3 +21,6 @@ CREATE TABLE jobDescription (
 	hours VARCHAR(12)
 );
 
+CREATE TABLE location (
+	locationID INT UNSIGNED NOT NULL
+);
