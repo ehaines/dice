@@ -13,8 +13,10 @@
 	<body>
 		<h1>Dice.com Job Listing Schema</h1>
 		<figure>
-			<img src="img/Dice_ERD.svg" />
-			<figcaption>An Entity-Relationship Diagram for a single Dice.com Job Listing Page</figcaption>
+			<img src="img/Dice_ERD.svg" alt="An Entity Relationship Diagram for a Dice.com Job Listing" />
+			<figcaption>An Entity-Relationship Diagram for a single Dice.com Job Listing Page. <br />
+				Made with <a href="http://www.yworks.com/en/products/yfiles/yed/">yEd Graph Editor.</a>
+			</figcaption>
 		</figure>
 	</body>
 </html> 
