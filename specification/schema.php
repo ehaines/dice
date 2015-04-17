@@ -30,8 +30,8 @@
 		</ul>
 		<h3>Tag</h3>
 		<ul>
+			<li>Primary Key: tagID</li>
 			<li>Tag Name</li>
-			<li>Tag ID</li>
 		</ul>
 		<h3>Location</h3>
 		<ul>
