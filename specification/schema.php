@@ -34,6 +34,21 @@
 			<li>Tag ID</li>
 		</ul>
 		<h3>Location</h3>
+		<ul>
+			<li>Primary Key: locationID</li>
+			<li>name</li>
+		</ul>
+		<h2>Weak Entities:</h2>
+		<h3>Job Location</h3>
+		<ul>
+			<li>Primary Key: locationID</li>
+			<li>Primary Key: positionID</li>
+		</ul>
+		<h3>Job Tag</h3>
+		<ul>
+			<li>Primary Key: tagID</li>
+			<li>Primary Key: positionID</li>
+		</ul>
 		<figure>
 			<img src="../img/Dice_ERD.svg" alt="An Entity Relationship Diagram for a Dice.com Job Listing" />
 			<figcaption>An Entity-Relationship Diagram for a single Dice.com Job Listing Page. <br />
