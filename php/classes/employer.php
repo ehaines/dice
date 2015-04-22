@@ -54,7 +54,7 @@ class Employer {
 	 */
 	public function setDiceId($newDiceId) {
 		//base case - if the primary key/diceId is null, this is a new employer and mySQL hasn't assigned an id yet
-		if($newDiceId===null) {
+		if($newDiceId === null) {
 			$this->diceId = null;
 			return;
 		}
@@ -83,15 +83,14 @@ class Employer {
 	 * mutator method for logo string
 	 */
 	public function setLogo($newLogo) {
+		//make sure the url string is clean and hasn't been maliciously altered
+		$newLogo = filter_var($newLogo, FILTER_SANITIZE_URL);
 
 		//make sure the url for the logo is valid
 		$newLogo = filter_var($newLogo, FILTER_VALIDATE_URL);
 		if($newLogo === false) {
 			throw new InvalidArgumentException("The logo url is invalid");
 		}
-
-		//make sure the url string is clean and hasn't been maliciously altered
-		$newLogo = filter_var($newLogo, FILTER_SANITIZE_URL);
 
 		//check that the length of the url is not too long
 		if(strlen($newLogo) > 300) {
