@@ -58,6 +58,7 @@ class Employer {
 			$this->diceId = null;
 			return;
 		}
+
 		//make sure the string is clean and hasn't been maliciously altered
 		$newDiceId = filter_var($newDiceId, FILTER_SANITIZE_STRING);
 
@@ -112,6 +113,24 @@ class Employer {
 	/**
 	 * mutator method for link to website
 	 */
+	public function setWebsite($newWebsite) {
+		//make sure the url string is clean and hasn't been maliciously altered
+		$newWebsite = filter_var($newWebsite, FILTER_SANITIZE_URL);
+
+		//make sure the url for the logo is valid
+		$newWebsite = filter_var($newWebsite, FILTER_VALIDATE_URL);
+		if($newWebsite === false) {
+			throw new InvalidArgumentException("The website url is invalid");
+		}
+
+		//check that the length of the url is not too long
+		if(strlen($newWebsite) > 300) {
+			throw new LengthException("The website url is too long for the mySQL field (>300 characters)");
+		}
+
+		//store the logo URL in the member variable
+		$this->website = $newWebsite;
+	}
 
 
 
