@@ -25,6 +25,14 @@ class Employer {
 	protected $website;
 
 
+	/**
+	 * Constructor for this employer object.
+	 * @param $newDiceId String id of this employer as primary key or null if new Employer object
+	 * @param $newLogo String url <300 chars linking to logo image
+	 * @param $newWebsite String url <300 chars linking to corporate website
+	 * @throws InvalidArgumentException if urls are not valid
+	 * @throws LengthException if length of string is too long for SQL field
+	 */
 	public function __construct($newDiceId, $newLogo, $newWebsite) {
 		try {
 			$this->setDiceId($newDiceId);
@@ -49,8 +57,8 @@ class Employer {
 
 	/**
 	 * mutator method for diceId
-	 *
 	 * @param String for new value of diceId
+	 * @throws LengthException if length of String is too long for the mySQL diceId field
 	 */
 	public function setDiceId($newDiceId) {
 		//base case - if the primary key/diceId is null, this is a new employer and mySQL hasn't assigned an id yet
@@ -82,6 +90,10 @@ class Employer {
 
 	/**
 	 * mutator method for logo string
+	 *
+	 * @param $newLogo String for url linking to logo image
+	 * @throws InvalidArgumentException if url is not valid
+	 * @throws LengthException if length of string is too long for SQL field
 	 */
 	public function setLogo($newLogo) {
 		//make sure the url string is clean and hasn't been maliciously altered
@@ -112,6 +124,10 @@ class Employer {
 	}
 	/**
 	 * mutator method for link to website
+	 *
+	 * @param String URL of company website
+	 * @throws InvalidArgumentException if url is not valid
+	 * @throws LengthException if length of string is too long for SQL field
 	 */
 	public function setWebsite($newWebsite) {
 		//make sure the url string is clean and hasn't been maliciously altered
@@ -131,9 +147,6 @@ class Employer {
 		//store the logo URL in the member variable
 		$this->website = $newWebsite;
 	}
-
-
-
 }
 
 ?>
