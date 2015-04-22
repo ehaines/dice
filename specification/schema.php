@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<
+
+!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Dice.com Job Listing Schema</title>
