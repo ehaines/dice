@@ -33,11 +33,12 @@ class Employer {
 	 * @throws InvalidArgumentException if urls are not valid
 	 * @throws LengthException if length of string is too long for SQL field
 	 */
-	public function __construct($newDiceId, $newLogo, $newWebsite) {
+	public function __construct($newDiceId, $newLogo, $newWebsite, $newName) {
 		try {
 			$this->setDiceId($newDiceId);
 			$this->setLogo($newLogo);
 			$this->setWebsite($newWebsite);
+			$this->setName($newName);
 		} catch(InvalidArgumentException $invalidArgument) {
 			//rethrow exception to the caller
 			throw(new InvalidArgumentException($invalidArgument->getMessage(), $invalidArgument));
