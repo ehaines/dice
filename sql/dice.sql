@@ -9,6 +9,7 @@ CREATE TABLE employer (
 	diceID VARCHAR(15),
 	logo VARCHAR(300),
 	website VARCHAR(300),
+	name VARCHAR(100),
 	PRIMARY KEY (diceID)
 );
 

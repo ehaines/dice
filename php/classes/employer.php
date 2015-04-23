@@ -147,6 +147,23 @@ class Employer {
 		//store the logo URL in the member variable
 		$this->website = $newWebsite;
 	}
+
+	public function insert() {
+
+	}
+
+	public function update() {
+
+	}
+
+	public function delete() {
+
+	}
+
+	public function getEmployerByPrimaryKey() {
+
+	}
+
 }
 
 ?>
