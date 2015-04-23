@@ -186,7 +186,8 @@ class Employer {
 		$query = "UPDATE employer SET diceID = :diceId, logo = :logo,
  			website = :website, name = :name WHERE diceID = :diceId";
 
-
+		//bind member variables to the placeholders in the query template
+		$parameters = array("diceID" => $this.diceID, )
 	}
 
 	public function delete() {
