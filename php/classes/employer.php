@@ -158,6 +158,19 @@ class Employer {
 		return ($this->$name);
 	}
 
+	public function setName($newName) {
+		//make sure the string is clean and hasn't been maliciously altered
+		$newName = filter_var($newName, FILTER_SANITIZE_STRING);
+
+		//check that the length of the id is not too long
+		if(strlen($newName) > 100) {
+			throw new LengthException("The employer name is too long for the mySQL field");
+		}
+
+		//store the name in the member variable
+		$this->name = $newName;
+	}
+
 
 	public function insert() {
 
