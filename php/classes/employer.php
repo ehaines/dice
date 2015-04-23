@@ -24,6 +24,12 @@ class Employer {
 	 */
 	protected $website;
 
+	/**
+	 * name of the company/employer
+	 * @var String name
+	 */
+	protected $name;
+
 
 	/**
 	 * Constructor for this employer object.
@@ -148,6 +154,10 @@ class Employer {
 		//store the logo URL in the member variable
 		$this->website = $newWebsite;
 	}
+	public function getName() {
+		return ($this->$name);
+	}
+
 
 	public function insert() {
 
