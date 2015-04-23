@@ -163,6 +163,9 @@ class Employer {
 	public function getEmployerByPrimaryKey() {
 
 	}
+	public function getEmployerByName() {
+
+	}
 
 }
 
