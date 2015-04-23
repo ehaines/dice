@@ -176,6 +176,12 @@ class Employer {
 
 	}
 
+	/**
+	 * Updates the employer row in mySQL
+	 *
+	 * @param PDO $pdo pointer to the PDO connection, by reference
+	 * @throws PDOException when the employer diceID is null
+	 */
 	public function update(PDO &$pdo) {
 		//don't update a null employer that isn't in the database (this prevents superfluous traffic to the server).
 		if($this->diceId === null) {
