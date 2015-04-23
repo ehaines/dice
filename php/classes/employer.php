@@ -172,7 +172,22 @@ class Employer {
 	}
 
 
-	public function insert() {
+	public function insert(PDO &$pdo) {
+		if ($this->diceId !== null){
+			throw (new PDOException("This employer already exists in the system."));
+		}
+
+		//create query template
+		//TODO - is name a reserved word?
+		$query = "INSERT INTO employer(diceID, logo, website, name) VALUES (:diceId, :logo, :website, :name)";
+
+		$statement = $pdo->prepare($query);
+
+		//bind the member variables to the placeholders in the query
+		$parameters = array("diceId" => $this.diceId, "logo" => $this.logo,
+			"website" => $this.website, "name" => $this.name);
+
+		$statement->execute($parameters);
 
 	}
 
