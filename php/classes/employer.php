@@ -186,8 +186,14 @@ class Employer {
 		$query = "UPDATE employer SET diceID = :diceId, logo = :logo,
  			website = :website, name = :name WHERE diceID = :diceId";
 
+		//put query into pdo object
+		$statement = $pdo->prepare($query);
+
 		//bind member variables to the placeholders in the query template
-		$parameters = array("diceID" => $this.diceID, )
+		$parameters = array("diceID" => $this.diceID, "logo" => $this.logo,
+			"website" => $this.website, "name" => $this.name);
+
+		$statement->execute($parameters);
 	}
 
 	public function delete() {
