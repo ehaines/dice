@@ -152,7 +152,16 @@ class Employer {
 
 	}
 
-	public function update() {
+	public function update(PDO &$pdo) {
+		//don't update a null employer that isn't in the database (this prevents superfluous traffic to the server).
+		if($this->diceId === null) {
+			throw (new PDOException("unable to update an employer that doesn't exist"));
+		}
+
+		//create query template
+		$query = "UPDATE employer SET diceID = :diceId, logo = :logo,
+ 			website = :website, name = :name WHERE diceID = :diceId";
+
 
 	}
 
