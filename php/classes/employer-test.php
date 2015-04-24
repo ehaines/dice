@@ -5,8 +5,6 @@ require_once("/etc/apache2/data-design/encrypted-config.php");
 //bring in/require the class being tested (Employer)
 require_once("employer.php");
 
-
-
 try {
 	//  $config = readConfig("/etc/apache2/data-design/database-config.ini");
 	$config = readConfig("/etc/apache2/data-design/ehaines.ini");
@@ -32,13 +30,14 @@ try {
 	$employer->update($pdo);
 
 	//select from mySQL
+	$selectedPdoEmployer = Employer::getEmployerByPrimaryKey($pdo, "ABC123");
 
-
-
+	//delete the Employer from mySQL and show that it is gone
+	$employer->delete($pdo);
+	$selectedPdoEmployer = Employer::getEmployerByPrimaryKey($pdo, "ABC123");
 } catch(PDOException $pdoException) {
-	echo "Exception: " . $pdoException->getMessage();
+		echo "Exception: " . $pdoException->getMessage();
 }
-//  NOTE: I removed the "?[NO_SPACE>" php closing tag as it was identified as redundant by phpStorm and Dylan confirmed it's been essentially deprecated.
-
+//  NOTE: Jason removed the "?[NO_SPACE>" php closing tag as it was identified as redundant by phpStorm and Dylan confirmed it's been essentially deprecated.
 
 ?>
