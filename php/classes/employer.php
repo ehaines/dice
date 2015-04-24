@@ -244,7 +244,39 @@ class Employer {
 		$statement->execute($parameters);
 	}
 
-	public function getEmployerByPrimaryKey() {
+	/**
+	 * @param PDO $pdo pointer to the PDO connection by reference
+	 * @param $diceId the primary key to search for
+	 * @throws PDOException if employer key is empty or if there's a problem fetching the rows
+	 * @return Employer|null
+	 */
+	public function getEmployerByPrimaryKey(PDO &$pdo, $diceId) {
+		$diceId = filter_var(FILTER_SANITIZE_STRING);
+		if(empty($diceId) === true) {
+			throw new PDOException("Employer key is empty");
+		}
+		//create SQL statement/query template and insert it into PDOStatement object
+		$query = "SELECT (diceId, logo, website, name) FROM employer WHERE diceId = :diceId";
+		$statement = $pdo->prepare($query);
+
+		//bind the $diceId to the placeholder in the template
+		$parameters = array("diceId" => $diceId);
+		$statement->execute($parameters);
+
+		//grab the employer from mySQL
+		try {
+			$employer = null; //null will be returned if employer can't be found in the database
+			$statement->setFetchMode(PDO::FETCH_ASSOC);
+			$row = $statement->fetch();
+			if ($row !== false) {
+				$employer = new Employer($row["diceId"], $row["logo"], $row["website"], $row["name"]);
+			}
+
+		}catch (Exception $exception) {
+			//rethrow exception as a PDO exception
+			throw(new PDOException($exception->getMessage(), $exception));
+		}
+		return $employer;
 
 	}
 	public function getEmployerByName() {
