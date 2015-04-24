@@ -296,6 +296,29 @@ class Employer {
 
 		$statement->execute($parameters);
 
+		//build an array of employers matching the query
+		$employers = new SplFixedArray($statement->rowCount());
+		$statement->setFetchMode(PDO::FETCH_ASSOC);
+		while(($row = $statement->fetch()) !== false) {
+			try {
+				//creates a new employer object using values returned by the SQL query
+				$employer = new Employer($row["diceId"], $row["logo"], $row["website"], $row["name"]);
+				//places employer into the array at the current index/key
+				$employers[$employers->key()] = $employer;
+				//gets the next key (the index number of the SplFixedArray) for the next iteration.
+				$employers->next();
+			} catch (Exception $exception){
+				//if the row couldn't be converted, rethrow the error
+				throw new PDOException($exception->getMessage(), $exception);
+			}
+		}
+		//make sure array is not empty and return it
+		if (count($employers) === 0) {
+			return null;
+		} else {
+			return $employers;
+		}
+
 	}
 
 }
