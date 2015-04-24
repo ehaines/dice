@@ -178,7 +178,6 @@ class Employer {
 		}
 
 		//create query template
-		//TODO - is name a reserved word?
 		$query = "INSERT INTO employer(diceId, logo, website, name) VALUES (:diceId, :logo, :website, :name)";
 
 		$statement = $pdo->prepare($query);
@@ -219,7 +218,20 @@ class Employer {
 		$statement->execute($parameters);
 	}
 
-	public function delete() {
+	public function delete(PDO &$pdo) {
+		//checks that the employer exists
+		if($this->diceId === null) {
+			throw (new PDOException("unable to delete an employer that doesn't exist"));
+		}
+		//create a query template and put into pdo object
+		$query = "DELETE FROM employer WHERE diceId = :diceId";
+		$statement = $pdo->prepare($query);
+
+		//bind member variables to placeholder
+		$parameters = array("diceId" => $this.diceId);
+
+		//run the query to delete the row from the database
+		$statement->execute($parameters);
 
 	}
 
