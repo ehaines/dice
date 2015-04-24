@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS tag;
 DROP TABLE IF EXISTS jobTag;
 
 CREATE TABLE employer (
-	diceId VARCHAR(15),
+	diceId VARCHAR(15) NOT NULL ,
 	logo VARCHAR(300),
 	website VARCHAR(300),
 	name VARCHAR(100),

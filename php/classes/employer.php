@@ -183,10 +183,12 @@ class Employer {
 
 		$statement = $pdo->prepare($query);
 
-		//bind the member variables to the placeholders in the query
+		//bind the member variables to the placeholders in the query, getting the diceId primary key from the constructor
+		//instead of having SQL generate it like with an integer
 		$parameters = array("diceId" => $this.diceId, "logo" => $this.logo,
 			"website" => $this.website, "name" => $this.name);
 
+		//run the query
 		$statement->execute($parameters);
 
 	}
