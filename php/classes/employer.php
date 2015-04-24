@@ -279,7 +279,22 @@ class Employer {
 		return $employer;
 
 	}
-	public function getEmployerByName() {
+	public function getEmployerByName(PDO &$pdo, $nameToFind) {
+		//trim excess spaces at either end and filter for security
+		$nameToFind = trim($nameToFind);
+		$nameToFind = filter_var(FILTER_SANITIZE_STRING);
+		if(empty($nameToFind) === true) {
+			throw new PDOException("Name to find is empty or all zeros");
+		}
+		//add SQL wildcards so nameToFind will return even whether or not query starts with "the" or ends with "corp"
+		//the problem is it will search within words and not only whole words. Need to learn to deal with this.
+		$nameToFind = "%$nameToFind%";
+		//create a query template
+		$query = "SELECT diceId, logo, website, name FROM employer WHERE name LIKE :nameToFind";
+		$statement = $pdo->prepare($query);
+		$parameters = array("nameToFind" => $nameToFind);
+
+		$statement->execute($parameters);
 
 	}
 
