@@ -211,7 +211,7 @@ class Employer {
 		$statement = $pdo->prepare($query);
 
 		//bind member variables to the placeholders in the query template
-		$parameters = array("diceID" => $this.diceID, "logo" => $this.logo,
+		$parameters = array("diceId" => $this.diceId, "logo" => $this.logo,
 			"website" => $this.website, "name" => $this.name);
 
 		$statement->execute($parameters);
