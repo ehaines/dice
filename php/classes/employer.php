@@ -248,7 +248,7 @@ class Employer {
 	 * @param PDO $pdo pointer to the PDO connection by reference
 	 * @param $diceId the primary key to search for
 	 * @throws PDOException if employer key is empty or if there's a problem fetching the rows
-	 * @return Employer|null
+	 * @return Employer|null the employer searched for
 	 */
 	public function getEmployerByPrimaryKey(PDO &$pdo, $diceId) {
 		$diceId = filter_var(FILTER_SANITIZE_STRING);
