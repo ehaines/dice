@@ -250,7 +250,7 @@ class Employer {
 	 * @throws PDOException if employer key is empty or if there's a problem fetching the rows
 	 * @return Employer|null the employer searched for
 	 */
-	public function getEmployerByPrimaryKey(PDO &$pdo, $diceId) {
+	public static function getEmployerByPrimaryKey(PDO &$pdo, $diceId) {
 		$diceId = filter_var(FILTER_SANITIZE_STRING);
 		if(empty($diceId) === true) {
 			throw new PDOException("Employer key is empty");
@@ -279,7 +279,7 @@ class Employer {
 		return $employer;
 
 	}
-	public function getEmployerByName(PDO &$pdo, $nameToFind) {
+	public static function getEmployerByName(PDO &$pdo, $nameToFind) {
 		//trim excess spaces at either end and filter for security
 		$nameToFind = trim($nameToFind);
 		$nameToFind = filter_var(FILTER_SANITIZE_STRING);
