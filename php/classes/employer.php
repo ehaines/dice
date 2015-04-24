@@ -179,7 +179,7 @@ class Employer {
 
 		//create query template
 		//TODO - is name a reserved word?
-		$query = "INSERT INTO employer(diceID, logo, website, name) VALUES (:diceId, :logo, :website, :name)";
+		$query = "INSERT INTO employer(diceId, logo, website, name) VALUES (:diceId, :logo, :website, :name)";
 
 		$statement = $pdo->prepare($query);
 
@@ -204,8 +204,8 @@ class Employer {
 		}
 
 		//create query template
-		$query = "UPDATE employer SET diceID = :diceId, logo = :logo,
- 			website = :website, name = :name WHERE diceID = :diceId";
+		$query = "UPDATE employer SET diceId = :diceId, logo = :logo,
+ 			website = :website, name = :name WHERE diceId = :diceId";
 
 		//put query into pdo object
 		$statement = $pdo->prepare($query);
