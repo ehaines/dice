@@ -171,7 +171,12 @@ class Employer {
 		$this->name = $newName;
 	}
 
-
+	/**
+	 * inserts this employer into mySQL
+	 *
+	 * @param PDO $pdo pointer to PDO connection, by reference
+	 * @throws PDOException when employer already exists in the system
+	 */
 	public function insert(PDO &$pdo) {
 		if ($this->diceId !== null){
 			throw (new PDOException("This employer already exists in the system."));
@@ -218,6 +223,11 @@ class Employer {
 		$statement->execute($parameters);
 	}
 
+	/**
+	 * Deletes employer from the database
+	 * @param PDO $pdo pointer to PDO connection, by reference
+	 * @throws PDOException when employer doesn't exist in the first place
+	 */
 	public function delete(PDO &$pdo) {
 		//checks that the employer exists
 		if($this->diceId === null) {
@@ -232,7 +242,6 @@ class Employer {
 
 		//run the query to delete the row from the database
 		$statement->execute($parameters);
-
 	}
 
 	public function getEmployerByPrimaryKey() {
