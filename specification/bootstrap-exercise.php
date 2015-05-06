@@ -43,16 +43,34 @@
 		<main class="container-fluid">
 			<div class="row">
 				<div id="tankcat" class="col-md-3">
-					<img src="../img/tankcat.jpg" alt="One does not simply tankcat into Mordor.">
+					<img class="img-responsive" src="../img/tankcat.jpg" alt="One does not simply tankcat into Mordor.">
 				</div>
 				<div class="col-md-9">
-					<p>Meh hella Truffaut selfies, put a bird on it tousled leggings master cleanse.
+					<p>
+						Meh hella Truffaut selfies, put a bird on it tousled leggings master cleanse.
 						Bicycle rights 8-bit cronut Portland banh mi narwhal heirloom, cornhole semiotics.
 						Keytar ugh Tumblr tote bag. Squid twee taxidermy mlkshk actually. Hella forage Truffaut
 						quinoa slow-carb farm-to-table. Slow-carb trust fund Williamsburg skateboard, distillery
 						kogi kitsch single-origin coffee Echo Park fixie 8-bit biodiesel artisan. Migas put a bird on
 						it hella sriracha viral crucifix synth, ugh tote bag Truffaut drinking vinegar chia four
 						dollar toast seitan mixtape.</p>
+					<p>
+						Keffiyeh lumbersexual taxidermy pork belly, salvia gluten-free four dollar toast yr 3 wolf moon
+						leggings. Butcher heirloom vegan fap irony, dreamcatcher messenger bag art party whatever
+						disrupt asymmetrical Carles. Raw denim 8-bit American Apparel, disrupt viral skateboard
+						semiotics Brooklyn seitan yr. Banh mi Thundercats organic yr, mlkshk retro Shoreditch
+						McSweeney's photo booth kitsch twee pug migas artisan. Distillery ethical four dollar toast
+						cred pug. Before they sold out organic fap cornhole Portland authentic. Sustainable Thundercats
+						wayfarers, synth gentrify Pitchfork Schlitz kogi food truck direct trade stumptown.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<img class="img-responsive" src="../img/techsupportcat.jpg" alt="One does not simply tankcat into Mordor.">
+				</div>
+				<div class="col-md-4">
+					<img class="img-responsive" src="../img/notkeyboard.jpg" alt="One does not simply tankcat into Mordor.">
 				</div>
 			</div>
 		</main>
