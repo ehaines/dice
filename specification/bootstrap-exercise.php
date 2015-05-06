@@ -12,10 +12,9 @@
 		<!-- Optional Bootstrap theme -->
 		<link type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" rel="stylesheet"/>
 
-		<!-- ////////////////////////////////////////////////
-		 //// LINK TO YOUR CUSTOM CSS FILES HERE
-		 //// <link type="text/css" href="css/style.css" rel="stylesheet"/>
-		 ///////////////////////////////////////////////////// -->
+
+		<link type="text/css" href="../specification/bootstrap-exercise.css" rel="stylesheet"/>
+
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,11 +31,31 @@
 
 		<!-- Latest compiled and minified Bootstrap JavaScript, all compiled plugins included -->
 		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-		<title>Bootstrap 101 Template (DDC Version!)</title>
+		<title>Bootstrap Exercise</title>
 	</head>
 	<body>
-		<div class="container">
-			<h1>Hello, world! I'm a Bootstrap page! :D</h1>
-		</div>
+		<header class = "container-fluid">
+			<div class = "row">
+				<div class = "col-md-12"></div>
+				<h1>Hello, world! I'm a Bootstrap page! :D</h1>
+			</div>
+		</header>
+		<main class="container-fluid">
+			<div class="row">
+				<div id="tankcat" class="col-md-3">
+					<img src="../img/tankcat.jpg" alt="One does not simply tankcat into Mordor.">
+				</div>
+				<div class="col-md-9">
+					<p>Meh hella Truffaut selfies, put a bird on it tousled leggings master cleanse.
+						Bicycle rights 8-bit cronut Portland banh mi narwhal heirloom, cornhole semiotics.
+						Keytar ugh Tumblr tote bag. Squid twee taxidermy mlkshk actually. Hella forage Truffaut
+						quinoa slow-carb farm-to-table. Slow-carb trust fund Williamsburg skateboard, distillery
+						kogi kitsch single-origin coffee Echo Park fixie 8-bit biodiesel artisan. Migas put a bird on
+						it hella sriracha viral crucifix synth, ugh tote bag Truffaut drinking vinegar chia four
+						dollar toast seitan mixtape.</p>
+				</div>
+			</div>
+		</main>
+
 	</body>
 </html>
